@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#087f5b">
+  <link rel="manifest" href="manifest.json">
+  <title>Smart Agro Marketplace</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <div class="brand">🌿 Smart Agro Marketplace</div>
+      <div class="tagline">Connecting Farmers to Consumers – Digitally</div>
+    </div>
+    <button id="roleBtn" class="role-btn">👨‍🌾 Farmer Mode</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <span class="pill">Hyperlocal • AI-Powered • Transparent • Secure</span>
+        <h1>Direct Farm-to-Buyer Marketplace</h1>
+        <p>Fresh, safe and affordable agricultural produce — with transparent prices and direct farmer access.</p>
+        <div class="hero-actions">
+          <button class="primary" onclick="scrollToId('market')">🛒 Explore Marketplace</button>
+          <button class="secondary" onclick="openVoice()">🎤 Voice Assistant</button>
+        </div>
+      </div>
+      <div class="hero-art">👨‍🌾<br><span>🌱 🚜 🥕</span></div>
+    </section>
+
+    <section class="stats">
+      <div><b>30–50%</b><span>Potentially higher farmer income</span></div>
+      <div><b>20–40%</b><span>Potentially lower consumer price</span></div>
+      <div><b>100%</b><span>Transaction visibility</span></div>
+    </section>
+
+    <section id="market" class="section">
+      <div class="section-head">
+        <div>
+          <h2>🛍️ Marketplace</h2>
+          <p>Nearby verified farm products</p>
+        </div>
+        <input id="search" class="search" placeholder="Search crops..." oninput="renderProducts()">
+      </div>
+      <div id="products" class="grid"></div>
+    </section>
+
+    <section class="section">
+      <h2>👥 Farmers Community</h2>
+      <p>Join a group, combine produce and create bulk listings for better buyer access.</p>
+      <div class="community">
+        <div>👨‍🌾👩‍🌾<b>Group Registration</b><small>Join & Connect</small></div>
+        <div>📦<b>Combine Produce</b><small>Collective Selling</small></div>
+        <div>🏪<b>Bulk Listing</b><small>Higher Volume</small></div>
+        <div>🤝<b>Buyer Access</b><small>Direct to Market</small></div>
+      </div>
+      <button class="primary" onclick="joinCommunity()">+ Join Farmers Group</button>
+    </section>
+
+    <section class="section innovation">
+      <h2>💡 What makes us different?</h2>
+      <div class="features">
+        <span>🤖 AI crop quality/grade</span>
+        <span>📍 Nearby buyer matching</span>
+        <span>📊 Local price comparison</span>
+        <span>🚚 Farm-gate pickup & tracking</span>
+        <span>🗣️ Marathi voice support</span>
+        <span>🔐 Secure payment & escrow</span>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>📦 My Orders</h2>
+      <div id="orders" class="orders"></div>
+    </section>
+
+    <section class="section farmer-panel">
+      <h2>🌾 Farmer Dashboard</h2>
+      <div class="dashboard">
+        <div><b id="listingCount">3</b><span>Active Listings</span></div>
+        <div><b>₹12,450</b><span>Sales This Month</span></div>
+        <div><b>8</b><span>Orders</span></div>
+        <div><b>4.8 ⭐</b><span>Buyer Rating</span></div>
+      </div>
+      <button class="primary" onclick="openAddProduct()">+ Add Crop Listing</button>
+    </section>
+  </main>
+
+  <nav class="bottom-nav">
+    <button onclick="scrollToId('market')">🏠<span>Home</span></button>
+    <button onclick="scrollToId('market')">🛒<span>Market</span></button>
+    <button onclick="openVoice()">🎤<span>Voice</span></button>
+    <button onclick="scrollToId('orders')">📦<span>Orders</span></button>
+    <button onclick="scrollToId('community')">👥<span>Community</span></button>
+  </nav>
+
+  <div id="modal" class="modal hidden">
+    <div class="modal-card">
+      <button class="close" onclick="closeModal()">×</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast"></div>
+  <script src="app.js"></script>
+</body>
+                                                                 </html>
